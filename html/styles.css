@@ -5,7 +5,8 @@
   --muted: #929292;
   --line: #292929;
   --space: clamp(1.25rem, 5vw, 5rem);
-  font-family: "Courier New", Courier, monospace;
+  --sans: "Space Grotesk", sans-serif;
+  --mono: "Space Mono", monospace;
 }
 
 * {
@@ -18,7 +19,7 @@ body {
   margin: 0;
   background: var(--black);
   color: var(--white);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--sans);
   line-height: 1.5;
 }
 body::before {
@@ -56,7 +57,7 @@ footer {
   gap: 1rem;
   padding: 1.25rem var(--space);
   border-bottom: 1px solid var(--line);
-  font-family: var(--font-mono, "Courier New", monospace);
+  font-family: var(--mono);
 }
 .logo {
   font-size: 0.9rem;
@@ -86,6 +87,22 @@ nav a {
 nav a:hover {
   color: var(--white);
 }
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.social-links a {
+  display: flex;
+  color: var(--muted);
+}
+.social-links a:hover {
+  color: var(--white);
+}
+.social-links svg {
+  width: 1rem;
+  fill: currentColor;
+}
 
 main {
   padding-inline: var(--space);
@@ -107,7 +124,7 @@ section {
 footer,
 .project-number,
 .project-state {
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--mono);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -153,7 +170,7 @@ h1 em {
   margin-top: 1.5rem;
   padding: 0.9rem 1.1rem;
   border: 1px solid var(--white);
-  font-family: "Courier New", monospace;
+  font-family: var(--mono);
   font-size: 0.8rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -205,15 +222,13 @@ h2 {
 .project li {
   padding: 0.3rem 0.6rem;
   border: 1px solid var(--line);
-  font:
-    0.7rem "Courier New",
-    monospace;
+  font: 0.7rem var(--mono);
   text-transform: uppercase;
 }
 .project-link {
   display: inline-block;
   margin-top: 1.5rem;
-  font: 0.75rem "Courier New", monospace;
+  font: 0.75rem var(--mono);
   text-transform: uppercase;
   text-underline-offset: 0.3rem;
 }
@@ -230,7 +245,7 @@ h2 {
 .role-date,
 .role-company {
   color: var(--muted);
-  font: 0.75rem "Courier New", monospace;
+  font: 0.75rem var(--mono);
   text-transform: uppercase;
 }
 .role h3 {
@@ -256,9 +271,7 @@ h2 {
 }
 .meta {
   margin-top: 3rem;
-  font:
-    0.75rem "Courier New",
-    monospace;
+  font: 0.75rem var(--mono);
   text-transform: uppercase;
 }
 .contact h2 {
@@ -272,11 +285,6 @@ h2 {
 }
 .contact > a:hover {
   color: var(--muted);
-}
-.contact > .social-link {
-  margin-left: 1rem;
-  font: 0.8rem "Courier New", monospace;
-  text-transform: uppercase;
 }
 footer {
   display: flex;
@@ -294,7 +302,7 @@ footer p {
     width: auto;
   }
   .project-grid {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   .role,
   .about {
