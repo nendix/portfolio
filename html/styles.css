@@ -50,8 +50,10 @@ footer {
 
 .site-header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   padding: 1.25rem var(--space);
   border-bottom: 1px solid var(--line);
   font-family: var(--font-mono, "Courier New", monospace);
@@ -71,7 +73,9 @@ footer {
 }
 nav {
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
 }
 nav a {
   color: var(--muted);
@@ -206,11 +210,37 @@ h2 {
     monospace;
   text-transform: uppercase;
 }
+.project-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font: 0.75rem "Courier New", monospace;
+  text-transform: uppercase;
+  text-underline-offset: 0.3rem;
+}
 .quiet {
   background: #111;
 }
-.cursor {
-  animation: blink 1s steps(1) infinite;
+
+.role {
+  display: grid;
+  gap: 1rem;
+  padding-block: 2rem;
+  border-block: 1px solid var(--line);
+}
+.role-date,
+.role-company {
+  color: var(--muted);
+  font: 0.75rem "Courier New", monospace;
+  text-transform: uppercase;
+}
+.role h3 {
+  margin-bottom: 0.3rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+.role div > p:last-child {
+  max-width: 38rem;
+  margin-bottom: 0;
+  color: var(--muted);
 }
 
 .about {
@@ -220,6 +250,9 @@ h2 {
 .about-copy {
   max-width: 40rem;
   font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+}
+.education {
+  color: var(--muted);
 }
 .meta {
   margin-top: 3rem;
@@ -240,6 +273,11 @@ h2 {
 .contact > a:hover {
   color: var(--muted);
 }
+.contact > .social-link {
+  margin-left: 1rem;
+  font: 0.8rem "Courier New", monospace;
+  text-transform: uppercase;
+}
 footer {
   display: flex;
   justify-content: space-between;
@@ -250,18 +288,15 @@ footer p {
   margin: 0;
 }
 
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
 @media (min-width: 48rem) {
   nav {
     gap: 2rem;
+    width: auto;
   }
   .project-grid {
     grid-template-columns: 2fr 1fr;
   }
+  .role,
   .about {
     grid-template-columns: 1fr 1fr;
   }
@@ -269,8 +304,5 @@ footer p {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-  .cursor {
-    animation: none;
   }
 }
