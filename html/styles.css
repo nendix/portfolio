@@ -1,0 +1,276 @@
+:root {
+  color-scheme: dark;
+  --black: #080808;
+  --white: #f5f5f0;
+  --muted: #929292;
+  --line: #292929;
+  --space: clamp(1.25rem, 5vw, 5rem);
+  font-family: "Courier New", Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  opacity: 0.18;
+  mask-image: linear-gradient(to bottom, black, transparent 70%);
+}
+
+a {
+  color: inherit;
+}
+a:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 5px;
+}
+.site-header,
+main,
+footer {
+  width: min(100%, 90rem);
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem var(--space);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono, "Courier New", monospace);
+}
+.logo {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.logo span,
+.meta,
+.project-number,
+.section-heading > p,
+.contact > p,
+footer {
+  color: var(--muted);
+}
+nav {
+  display: flex;
+  gap: 1rem;
+}
+nav a {
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+nav a:hover {
+  color: var(--white);
+}
+
+main {
+  padding-inline: var(--space);
+}
+section {
+  padding-block: clamp(5rem, 13vw, 10rem);
+  border-bottom: 1px solid var(--line);
+}
+.hero {
+  min-height: calc(100svh - 4.25rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.eyebrow,
+.section-heading > p,
+.contact > p,
+footer,
+.project-number,
+.project-state {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.eyebrow {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin: 0 0 2rem;
+  color: var(--muted);
+}
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 0 0 0.25rem #ffffff18;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1 {
+  max-width: 12ch;
+  margin-bottom: 1.5rem;
+  font-size: clamp(3.2rem, 12vw, 8.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.07em;
+}
+h1 em {
+  color: transparent;
+  font-style: normal;
+  -webkit-text-stroke: 1px var(--white);
+}
+.hero-copy {
+  max-width: 37rem;
+  color: #bdbdbd;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+.button {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--white);
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.button:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+.section-heading {
+  margin-bottom: 3rem;
+}
+h2 {
+  max-width: 13ch;
+  font-size: clamp(2.2rem, 7vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+.project-grid {
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.project {
+  min-height: 22rem;
+  padding: 1.5rem;
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.project h3 {
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+}
+.project p:not(.project-number) {
+  max-width: 28rem;
+  color: var(--muted);
+}
+.project ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.project li {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--line);
+  font:
+    0.7rem "Courier New",
+    monospace;
+  text-transform: uppercase;
+}
+.quiet {
+  background: #111;
+}
+.cursor {
+  animation: blink 1s steps(1) infinite;
+}
+
+.about {
+  display: grid;
+  gap: 2rem;
+}
+.about-copy {
+  max-width: 40rem;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+}
+.meta {
+  margin-top: 3rem;
+  font:
+    0.75rem "Courier New",
+    monospace;
+  text-transform: uppercase;
+}
+.contact h2 {
+  max-width: 15ch;
+}
+.contact > a {
+  display: inline-block;
+  border-bottom: 1px solid var(--white);
+  font-size: clamp(1rem, 4vw, 2.5rem);
+  text-decoration: none;
+}
+.contact > a:hover {
+  color: var(--muted);
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem var(--space);
+}
+footer p {
+  margin: 0;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+@media (min-width: 48rem) {
+  nav {
+    gap: 2rem;
+  }
+  .project-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+  .about {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .cursor {
+    animation: none;
+  }
+}

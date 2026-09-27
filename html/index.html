@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Daniele's portfolio — software, infrastructure, and experiments."
+    />
+    <title>nendix.dev — Software &amp; infrastructure</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="#top" aria-label="nendix.dev home"
+        >nendix<span>.dev</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">
+          <span class="status-dot" aria-hidden="true"></span> Available for
+          interesting work
+        </p>
+        <h1 id="hero-title">
+          I build software that<br /><em>does its job.</em>
+        </h1>
+        <p class="hero-copy">
+          Developer focused on useful products, dependable infrastructure, and
+          keeping complexity under control.
+        </p>
+        <a class="button" href="#work"
+          >View selected work <span aria-hidden="true">↘</span></a
+        >
+      </section>
+
+      <section id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <p>01 / Selected work</p>
+          <h2 id="work-title">Things I run and build.</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project featured">
+            <div>
+              <p class="project-number">001</p>
+              <h3>Homelab</h3>
+              <p>
+                Self-hosted services, automated deployments, and infrastructure
+                built to be understood.
+              </p>
+            </div>
+            <ul aria-label="Technologies">
+              <li>Linux</li>
+              <li>Docker</li>
+              <li>Networking</li>
+            </ul>
+          </article>
+
+          <article class="project quiet">
+            <div>
+              <p class="project-number">002</p>
+              <h3>Next project</h3>
+              <p>
+                Currently being designed, broken, fixed, and made worth sharing.
+              </p>
+            </div>
+            <span class="project-state"
+              >In progress<span class="cursor" aria-hidden="true">_</span></span
+            >
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p>02 / About</p>
+          <h2 id="about-title">Less noise.<br />Better systems.</h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            I enjoy turning vague problems into straightforward software. My
+            bias is toward boring technology, clear interfaces, and solutions
+            that remain pleasant to operate. I hold a bachelor's degree in
+            Computer Science from the University of Molise.
+          </p>
+          <p class="meta">Based in Europe · Self-hosted with care</p>
+        </div>
+      </section>
+
+      <section id="contact" class="contact" aria-labelledby="contact-title">
+        <p>03 / Contact</p>
+        <h2 id="contact-title">Have a problem worth solving?</h2>
+        <a href="mailto:hello@nendix.dev"
+          >hello@nendix.dev <span aria-hidden="true">↗</span></a
+        >
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year">2025</span> nendix.dev</p>
+      <p>Running from the homelab</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+services:
+  landing:
+    image: nginx:alpine
+    container_name: landing
+    restart: unless-stopped
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
+    networks:
+      - ms_npm_network
+
+networks:
+  ms_npm_network:
+    external: true
