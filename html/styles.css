@@ -237,12 +237,8 @@ h2 {
 }
 
 .role {
-  display: grid;
-  gap: 1rem;
   padding-block: 2rem;
-  border-block: 1px solid var(--line);
 }
-.role-date,
 .role-company {
   color: var(--muted);
   font: 0.75rem var(--mono);
@@ -304,7 +300,6 @@ footer p {
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .role,
   .about {
     grid-template-columns: 1fr 1fr;
   }
